@@ -50,7 +50,7 @@ class FixedQueue:
             raise FixedQueue.Empty  # 큐가 비어있는 경우 예외 처리를 발생
         return self.que[self.front]
     
-    def fing(self, value: Any) -> Any:   # 큐에서 value를 찾아 인덱스를 반환(없다면 -1을 반환)
+    def find(self, value: Any) -> Any:   # 큐에서 value를 찾아 인덱스를 반환(없다면 -1을 반환)
         for i in range(self.no):
             idx = (i + self.front) % self.capacity
             if self.que[idx] == value:   # 검색 성공
@@ -76,6 +76,5 @@ class FixedQueue:
             print('큐가 비었습니다.')
         else:
             for i in range(self.no):
-                print(self.que[(i + self.front) % self.capacity], end='')
+                print(self.que[(i + self.front) % self.capacity], end=' ')
             print()
-            
