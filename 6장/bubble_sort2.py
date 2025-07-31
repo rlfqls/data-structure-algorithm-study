@@ -1,6 +1,6 @@
 from typing import MutableSequence
 
-def bubble_sort_verbose(a: MutableSequence) -> None:
+def bubble_sort_verbose2(a: MutableSequence) -> None:
     ccnt = 0  # 비교 횟수
     scnt = 0  # 교환 횟수
     n = len(a)
@@ -36,4 +36,4 @@ if __name__ == "__main__":
     if len(a) != n:
         print(f"입력한 값이 {n}개가 아닙니다.")
     else:
-        bubble_sort_verbose(a)
+        bubble_sort_verbose2(a)
