@@ -7,9 +7,11 @@ def bubble_sort_verbose3(a: MutableSequence) -> None:
     ccnt = 0  # 비교 횟수
     scnt = 0  # 교환 횟수
     k = 0
+    i = 0
     while k < n - 1:
-        last = n - 1
         print(f"패스(스캔 시작 인덱스): {k+1}")
+        i += 1
+        last = n - 1
         for j in range(n - 1, k, -1):
             # 상태 출력
             for m in range(0, n-1):
@@ -21,15 +23,15 @@ def bubble_sort_verbose3(a: MutableSequence) -> None:
             print(f"{a[n-1]:2}")
             ccnt += 1
             if a[j - 1] > a[j]:
-                a[j - 1], a[j] = a[j], a[j - 1]
                 scnt += 1
+                a[j - 1], a[j] = a[j], a[j - 1]
                 last = j
-        k = last   # 여기서 갱신
+        k = last   # 갱신
 
         # 패스 후 리스트 상태 출력
-        for m in range(n-1):
-            print(f"{a[m]:2}", end="   ")
-        print(f"{a[n-1]:2}")
+        for m in range(0, n - 1):
+            print(f"{a[m]:2}", end='   ')
+        print(f"{a[n - 1]:2}")
 
     print(f"비교를 {ccnt}번 했습니다.")
     print(f"교환을 {scnt}번 했습니다.")
